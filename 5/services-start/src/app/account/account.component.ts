@@ -12,7 +12,7 @@ import {
     selector: 'app-account',
     templateUrl: './account.component.html',
     styleUrls: ['./account.component.css'],
-    providers: [LoggingService, AccountsService]
+    // providers: [LoggingService]
 }) export class AccountComponent {
     @Input() account: {
         name: string,
@@ -25,7 +25,7 @@ import {
 
 
     onSetTo(status: string) {
-        this.loggingService.logStatusChange(status);
+        // this.loggingService.logStatusChange(status);
         this.accountsService.updateStatus(this.id, status);
     }
 }
