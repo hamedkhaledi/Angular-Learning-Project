@@ -1,23 +1,23 @@
 import {
-    Component, EventEmitter, Output
+  Component
 }
-from '@angular/core';
+  from '@angular/core';
+import { AccountsService } from '../accounts.service';
 import {
-    LoggingService
+  LoggingService
 }
-from '../logging.service';
+  from '../logging.service';
 
-@Component({ selector: 'app-new-account', templateUrl: './new-account.component.html', styleUrls: ['./new-account.component.css'], providers: [LoggingService] }) export class NewAccountComponent {
-    @Output() accountAdded = new EventEmitter< {
-        name: string,
-        status: string
-    }
-    >();
+@Component({
+  selector: 'app-new-account',
+  templateUrl: './new-account.component.html',
+  styleUrls: ['./new-account.component.css'],
+  providers: [LoggingService, AccountsService]
+}) export class NewAccountComponent {
+  constructor(private loggingService: LoggingService, private accountsService: AccountsService) { }
 
-    constructor(private loggingService: LoggingService) {}
-
-    onCreateAccount(accountName: string, accountStatus: string) {
-        this.accountAdded.emit({ name: accountName, status: accountStatus });
-        this.loggingService.logStatusChange(accountStatus);
-    }
+  onCreateAccount(accountName: string, accountStatus: string) {
+    this.accountsService.addAccount(accountName, accountStatus);
+    this.loggingService.logStatusChange(accountStatus);
+  }
 }
