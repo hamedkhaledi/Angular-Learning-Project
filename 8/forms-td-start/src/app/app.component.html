@@ -11,6 +11,7 @@
           <div class="form-group">
             <label for="email">Mail</label>
             <input type="email" id="email" class="form-control" ngModel name="email" required email>
+            <p *ngIf="">Please enter your a valid value</p>
           </div>
         </div>
         <div class="form-group">
@@ -20,7 +21,7 @@
             <option value="teacher">Your first teacher?</option>
           </select>
         </div>
-        <button class="btn btn-primary" type="submit">Submit</button>
+        <button class="btn btn-primary" type="submit" [disabled]="!f.valid">Submit</button>
       </form>
     </div>
   </div>
