@@ -10,7 +10,7 @@ export class AppComponent {
   @ViewChild('f', { static: false }) signUpForm:NgForm;
   defaultQuestion = 'pet'
   answer=''
-  
+  genders = ['male', 'female']
   suggestUserName() {
     const suggestedName = 'Superuser';
   }
