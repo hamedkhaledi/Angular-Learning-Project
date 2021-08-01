@@ -6,8 +6,12 @@
           type="submit"
           class="btn btn-success"
           [disabled]="!recipeForm.valid"
-        >Save</button>
-        <button type="button" class="btn btn-danger" (click) = "onCancel()">Cancel</button>
+        >
+          Save
+        </button>
+        <button type="button" class="btn btn-danger" (click)="onCancel()">
+          Cancel
+        </button>
       </div>
       <div class="row">
         <div class="col-xs-12">
@@ -74,7 +78,13 @@
               />
             </div>
             <div class="col-xs-2">
-              <button class="btn btn-danger">X</button>
+              <button
+                class="btn btn-danger"
+                type="button"
+                (click)="onDeleteIngredient(i)"
+              >
+                X
+              </button>
             </div>
           </div>
           <hr />
