@@ -7,6 +7,11 @@ import { Component } from "@angular/core";
 })
 export class AppComponent {
   filteredStatus = "";
+  appStatus = new Promise((resolve, reject) => {
+    setTimeout(() => {
+      resolve("stable");
+    }, 2000);
+  });
   servers = [
     {
       instanceType: "medium",

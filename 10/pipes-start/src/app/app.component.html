@@ -2,8 +2,13 @@
   <div class="row">
     <div class="col-xs-12 col-sm-10 col-md-8 col-sm-offset-1 col-md-offset-2">
       <input type="text" class="form-control" [(ngModel)]="filteredStatus" />
-      <br>
-      <button class="btn btn-primary" (click) = "onAddServer()">Add server</button>
+      <br />
+      <button class="btn btn-primary" (click)="onAddServer()">
+        Add server
+      </button>
+      <br />
+      <br />
+      <h2>App Status : {{ appStatus | async }}</h2>
       <hr />
       <ul class="list-group">
         <li
