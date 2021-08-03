@@ -1,4 +1,4 @@
-import { HttpClient, HttpHeaders } from '@angular/common/http'
+import { HttpClient, HttpHeaders, HttpParams } from '@angular/common/http'
 import { Injectable } from '@angular/core'
 import { Subject, throwError } from 'rxjs'
 import { map, catchError } from 'rxjs/operators'
@@ -27,11 +27,16 @@ export class PostsService {
   }
 
   fetchPosts() {
+    let searchParams = new HttpParams()
+    searchParams = searchParams.append('print', 'pretty')
+    searchParams = searchParams.append('custom', 'key')
     return this.http
       .get<{ [key: string]: Post }>(
         'https://ng-complete-guide-4f874-default-rtdb.firebaseio.com/posts.json',
         {
-          headers: new HttpHeaders({ 'Content-Type': 'application/json'}),
+          headers: new HttpHeaders({ 'Content-Type': 'application/json' }),
+          // params: new HttpParams().set('print', 'pretty'),
+          params: searchParams,
         },
       )
       .pipe(
