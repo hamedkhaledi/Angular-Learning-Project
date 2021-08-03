@@ -1,4 +1,5 @@
 {
     "javascript.format.semicolons": "insert",
-    "typescript.format.semicolons": "insert"
+    "typescript.format.semicolons": "insert",
+    "pretty-formatter.quoteConvert": "single"
 }
