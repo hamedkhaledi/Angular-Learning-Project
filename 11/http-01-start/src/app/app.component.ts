@@ -1,8 +1,6 @@
 import { PostsService } from './posts.service'
 import { Component, OnDestroy, OnInit } from '@angular/core'
 import { HttpClient } from '@angular/common/http'
-import { templateJitUrl } from '@angular/compiler'
-import { map } from 'rxjs/operators'
 import { Post } from './post.model'
 import { Subscription } from 'rxjs'
 
