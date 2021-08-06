@@ -1,3 +1,4 @@
+import { Router } from '@angular/router';
 import { HttpClient, HttpErrorResponse } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { BehaviorSubject, Subject, throwError } from 'rxjs';
@@ -17,7 +18,7 @@ export interface AuthResponseData {
 export class AuthService {
   user = new BehaviorSubject<User>(null);
 
-  constructor(private http: HttpClient) {}
+  constructor(private http: HttpClient, private router: Router) {}
   signup(email: string, password: string) {
     return this.http
       .post<AuthResponseData>(
@@ -82,11 +83,18 @@ export class AuthService {
     switch (errorRes.error.error.message) {
       case 'EMAIL_EXISTS':
         errorMessage = 'This email exits already';
+        break;
       case 'EMAIL_NOT_FOUND':
         errorMessage = 'This email does not exist';
+        break;
       case 'INVALID_PASSWORD':
         errorMessage = 'This password is not correct';
     }
     return throwError(errorMessage);
+  }
+
+  logout(): void {
+    this.user.next(null);
+    this.router.navigate(['/auth']);
   }
 }
