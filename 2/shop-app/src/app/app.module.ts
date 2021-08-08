@@ -1,5 +1,4 @@
 import { SharedModule } from './Shared/shared.module';
-import { RecipeModule } from './recipes/recipes.module';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { HttpClientModule } from '@angular/common/http';
@@ -16,7 +15,6 @@ import { AuthModule } from './auth/auth/auth.module';
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-    RecipeModule,
     ShoppingListModule,
     SharedModule,
     CoreModule,
