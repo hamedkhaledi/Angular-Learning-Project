@@ -4,7 +4,7 @@ export const LOGIN = "LOGIN";
 export const LOGOUT = "LOGOUT";
 
 export class Login implements Action {
-  readonly type: string = LOGIN;
+  readonly type = LOGIN;
 
   constructor(
     public payload: {
@@ -16,7 +16,7 @@ export class Login implements Action {
   ) {}
 }
 export class Logout implements Action {
-  readonly type: string = LOGOUT;
+  readonly type = LOGOUT;
 }
 
 export type AuthActions = Login | Logout;

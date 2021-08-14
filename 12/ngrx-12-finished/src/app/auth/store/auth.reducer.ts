@@ -15,7 +15,7 @@ export function authReducer(
   switch (action.type) {
     case AuthActions.LOGIN:
       const user = new User(
-        action.payload.user,
+        action.payload.email,
         action.payload.userId,
         action.payload.token,
         action.payload.expirationDate
