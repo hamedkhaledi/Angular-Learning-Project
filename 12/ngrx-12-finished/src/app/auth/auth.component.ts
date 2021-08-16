@@ -10,7 +10,7 @@ import { NgForm } from "@angular/forms";
 import { Router } from "@angular/router";
 import { Observable, Subscription } from "rxjs";
 
-import { AuthService, AuthResponseData } from "./auth.service";
+import { AuthService } from "./auth.service";
 import { AlertComponent } from "../shared/alert/alert.component";
 import { PlaceholderDirective } from "../shared/placeholder/placeholder.directive";
 import * as fromApp from "../store/app.reducer";
