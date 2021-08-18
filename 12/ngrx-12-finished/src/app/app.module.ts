@@ -18,6 +18,7 @@ import { EffectsModule } from "@ngrx/effects";
     BrowserModule,
     HttpClientModule,
     AppRoutingModule,
+    // StoreDevtoolsModule,
     StoreModule.forRoot(fromApp.appReducer),
     EffectsModule.forRoot([AuthEffects]),
     SharedModule,
