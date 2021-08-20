@@ -5,12 +5,10 @@ Main Project Url : https://ng-course-recipe-book-6d0c7.web.app
 
 ## Course 
 
-<hr>
-
 https://www.udemy.com/course/the-complete-guide-to-angular-2/
 
 ## How to use 
-<hr>
+
 Run "npm install" inside this project folder to install all dependencies.
 
 Make sure you use the latest version of the CLI (upgrade guide below)
