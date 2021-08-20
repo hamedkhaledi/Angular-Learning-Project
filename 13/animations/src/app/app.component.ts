@@ -21,7 +21,15 @@ export class AppComponent {
   state = "normal";
   list = ["Milk", "Sugar", "Bread"];
 
+  onAnimate() {
+    this.state == "normal"
+      ? (this.state = "highlighted")
+      : (this.state = "normal");
+  }
   onAdd(item) {
     this.list.push(item);
+  }
+  onDelete(item) {
+    this.list.splice(this.list.indexOf(item), 1);
   }
 }
