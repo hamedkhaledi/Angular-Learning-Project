@@ -20,7 +20,7 @@ import { Component } from "@angular/core";
         "highlighted",
         style({ backgroundColor: "blue", transform: "translateX(100px)" })
       ),
-      transition("normal <=> highlighted", animate(400)),
+      transition("normal <=> highlighted", animate(300)),
       // transition("highlighted => normal", animate(800)),
     ]),
     trigger("wildState", [
@@ -44,7 +44,11 @@ import { Component } from "@angular/core";
       ),
       transition("normal => highlighted", animate(300)),
       transition("highlighted => normal", animate(800)),
-      transition("shrunken <=> *", animate(500)),
+      transition("shrunken <=> *", [
+        style({ backgroundColor: "orange" }),
+        animate(1000, style({ borderRadius: "50px" })),
+        animate(5000),
+      ]),
     ]),
   ],
 })
