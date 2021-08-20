@@ -4,36 +4,41 @@
       <h1>Animations</h1>
       <button class="btn btn-primary">Animate!</button>
       <button class="btn btn-primary">Shrink!</button>
-      <hr>
-      <div></div>
+      <hr />
+      <div [@divState]="state" style="width: 100px; height: 100px;"></div>
     </div>
   </div>
-  <hr>
+  <hr />
   <div class="row">
     <div class="col-xs-12">
-      <input type="text" #input>
-      <button class="btn btn-primary" (click)="onAdd(input.value)">Add Item!</button>
-      <hr>
+      <input type="text" #input />
+      <button class="btn btn-primary" (click)="onAdd(input.value)">
+        Add Item!
+      </button>
+      <hr />
       <ul class="list-group">
         <li
           class="list-group-item"
           (click)="onDelete(item)"
-          *ngFor="let item of list">
+          *ngFor="let item of list"
+        >
           {{ item }}
         </li>
       </ul>
     </div>
   </div>
-  <hr>
+  <hr />
   <div class="row">
     <div class="col-xs-12">
       <ul class="list-group">
         <li
           class="list-group-item"
           (click)="onDelete(item)"
-          *ngFor="let item of list">
+          *ngFor="let item of list"
+        >
           {{ item }}
         </li>
       </ul>
     </div>
+  </div>
 </div>
